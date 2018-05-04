@@ -1,4 +1,15 @@
-@import url("https://fonts.googleapis.com/css?family=Exo+2:100&subset=cyrillic");
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 100;
+  src: local("Exo 2 Thin"), local("Exo2-Thin");
+  src: url("../fonts/exo-2-v4-cyrillic-100.woff2") format("woff2");
+  src: url("../fonts/exo-2-v4-cyrillic-100.woff") format("woff");
+  font-display: fallback; }
+
+html {
+  height: 100%; }
+
 .page {
   max-width: 100vw;
   min-height: 100vh;
@@ -178,11 +189,15 @@
   font-weight: 700;
   text-decoration: none;
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer; }
   .card__add-item:after {
     content: '';
     position: absolute;
-    bottom: 1px;
+    bottom: 0;
     left: 0;
     right: 0;
     border-top: 1px dashed #1698d9;
@@ -283,6 +298,8 @@
     opacity: 0; } }
 
 @media only screen and (max-width: 1240px) {
+  html {
+    height: auto; }
   .page {
     padding: 40px 15px 0;
     -webkit-box-sizing: border-box;
