@@ -1,28 +1,47 @@
 $(function() {
-  $(".card__container")
+  $('.card__inner')
     .click(function() {
-      var card = $(this).parents(".card");
-      if (card.hasClass("card--disabled")) {
+      var card = $(this).parents('.card');
+      if (card.hasClass('card--disabled')) {
         return;
-      } else if (!card.hasClass("card--selected")) {
-        card.addClass("card--selected");
+      } else if (!card.hasClass('card--selected')) {
+        card.addClass('card--selected');
+        selectedTextAnimation(card);
       } else {
-        card.removeClass("card--selected card--hover");
+        card.removeClass('card--selected card--hover');
+        unselectedTextAnimation(card);
       }
     })
     .mouseleave(function() {
-      var card = $(this).parents(".card");
-      if (card.hasClass("card--selected")) {
-        card.addClass("card--hover");
+      var card = $(this).parents('.card');
+      if (card.hasClass('card--selected')) {
+        card.addClass('card--hover');
       } else {
-        card.removeClass("card--hover");
+        card.removeClass('card--hover');
       }
     });
 
-  $(".card__add-item").click(function(event) {
+  $('.card__add-item').click(function(event) {
     event.preventDefault();
-    $(this)
-      .parents(".card")
-      .addClass("card--selected");
+    var card = $(this).parents('.card');
+    card.addClass('card--selected');
+    selectedTextAnimation(card);
   });
+
+  function selectedTextAnimation(wrap) {
+    $('.info__text--default', wrap)
+      .stop()
+      .fadeOut();
+    $('.info__text--selected', wrap)
+      .stop()
+      .fadeIn();
+  }
+  function unselectedTextAnimation(wrap) {
+    $('.info__text--selected', wrap)
+      .stop()
+      .fadeOut();
+    $('.info__text--default', wrap)
+      .stop()
+      .fadeIn();
+  }
 });
