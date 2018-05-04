@@ -116,9 +116,6 @@ html {
     position: absolute;
     background: url("../img/cat.png") center no-repeat;
     z-index: 0; }
-  .card__inner:focus {
-    -webkit-box-shadow: 0 0 10px 20px #fff;
-    box-shadow: 0 0 10px 20px #fff; }
 
 .card__title {
   margin-left: -2px;
