@@ -1,6 +1,6 @@
-$(function() {
+$(function () {
   $('.card__inner')
-    .click(function() {
+    .click(function () {
       var card = $(this).parents('.card');
       if (card.hasClass('card--disabled')) {
         return;
@@ -12,7 +12,7 @@ $(function() {
         unselectedTextAnimation(card);
       }
     })
-    .mouseleave(function() {
+    .mouseleave(function () {
       var card = $(this).parents('.card');
       if (card.hasClass('card--selected')) {
         card.addClass('card--hover');
@@ -21,10 +21,11 @@ $(function() {
       }
     });
 
-  $('.card__add-item').click(function(event) {
+  $('.card__add-item').click(function (event) {
     event.preventDefault();
     var card = $(this).parents('.card');
     card.addClass('card--selected');
+    card.addClass('card--hover');
     selectedTextAnimation(card);
   });
 
