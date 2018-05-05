@@ -31,17 +31,17 @@ $(function() {
   function selectedTextAnimation(wrap) {
     $('.info__text--default', wrap)
       .stop()
-      .fadeOut();
+      .fadeOut(200);
     $('.info__text--selected', wrap)
       .stop()
-      .fadeIn();
+      .fadeIn(500);
   }
   function unselectedTextAnimation(wrap) {
     $('.info__text--selected', wrap)
       .stop()
-      .fadeOut();
+      .fadeOut(200);
     $('.info__text--default', wrap)
       .stop()
-      .fadeIn();
+      .fadeIn(500);
   }
 });
